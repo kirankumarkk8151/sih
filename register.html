@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+   </style>
+    </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Date of birth</span>
+            <input type="date" placeholder="Enter your DOB" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Course</span>
+            <input type="text" placeholder="Enter your course" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Religion</span>
+            <select name="">
+                <option value="">Select one...</option>
+                <option value="African Traditional & Diasporic">African Traditional & Diasporic</option>
+                <option value="Agnostic">Agnostic</option>
+                <option value="Atheist">Atheist</option>
+                <option value="Baha'i">Baha'i</option>
+                <option value="Buddhism">Buddhism</option>
+                <option value="Cao Dai">Cao Dai</option>
+                <option value="Chinese traditional religion">Chinese traditional religion</option>
+                <option value="Christianity">Christianity</option>
+                <option value="Hinduism">Hinduism</option>
+                <option value="Islam">Islam</option>
+                <option value="Jainism">Jainism</option>
+                <option value="Juche">Juche</option>
+                <option value="Judaism">Judaism</option>
+                <option value="Neo-Paganism">Neo-Paganism</option>
+                <option value="Nonreligious">Nonreligious</option>
+                <option value="Rastafarianism">Rastafarianism</option>
+                <option value="Secular">Secular</option>
+                <option value="Shinto">Shinto</option>
+                <option value="Sikhism">Sikhism</option>
+                <option value="Spiritism">Spiritism</option>
+                <option value="Tenrikyo">Tenrikyo</option>
+                <option value="Unitarian-Universalism">Unitarian-Universalism</option>
+                <option value="Zoroastrianism">Zoroastrianism</option>
+                <option value="primal-indigenous">primal-indigenous</option>
+                <option value="Other">Other</option>
+              </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Catogary</span>
+            <select name="">
+                <option value="">Select one...</option>
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Nationality</span><select id="nationality" name="nationality" data-name="nationality" required="" ms-field="nationality" data-parsley-required-message="Please let us know your nationality." class="select-field w-select">
+                <option value="">Select one...</option>
+                <option value='afghan'>Afghan</option>
+                <option value='albanian'>Albanian</option>
+                <option value='algerian'>Algerian</option>
+                <option value='american'>American</option>
+                <option value='andorran'>Andorran</option>
+                <option value='angolan'>Angolan</option>
+                <option value='anguillan'>Anguillan</option>
+                <option value='citizen-of-antigua-and-barbuda'>Citizen of Antigua and Barbuda</option>
+                <option value='argentine'>Argentine</option>
+                <option value='armenianaustralian'>ArmenianAustralian</option>
+                <option value='austrian'>Austrian</option>
+                <option value='azerbaijani'>Azerbaijani</option>
+                <option value='bahamian'>Bahamian</option>
+                <option value='bahraini'>Bahraini</option>
+                <option value='bangladeshi'>Bangladeshi</option>
+                <option value='barbadian'>Barbadian</option>
+                <option value='belarusian'>Belarusian</option>
+                <option value='belgian'>Belgian</option>
+                <option value='belizean'>Belizean</option>
+                <option value='beninese'>Beninese</option>
+                <option value='bermudian'>Bermudian</option>
+                <option value='bhutanese'>Bhutanese</option>
+                <option value='bolivian'>Bolivian</option>
+                <option value='citizen-of-bosnia-and-herzegovina'>Citizen of Bosnia and Herzegovina</option>
+                <option value='botswanan'>Botswanan</option>
+                <option value='brazilian'>Brazilian</option>
+                <option value='british'>British</option>
+                <option value='british-virgin-islander'>British Virgin Islander</option>
+                <option value='bruneian'>Bruneian</option>
+                <option value='bulgarian'>Bulgarian</option>
+                <option value='burkinan'>Burkinan</option>
+                <option value='burmese'>Burmese</option>
+                <option value='burundian'>Burundian</option>
+                <option value='cambodian'>Cambodian</option>
+                <option value='cameroonian'>Cameroonian</option>
+                <option value='canadian'>Canadian</option>
+                <option value='cape-verdean'>Cape Verdean</option>
+                <option value='cayman-islander'>Cayman Islander</option>
+                <option value='central-african'>Central African</option>
+                <option value='chadian'>Chadian</option>
+                <option value='chilean'>Chilean</option>
+                <option value='chinese'>Chinese</option>
+                <option value='colombian'>Colombian</option>
+                <option value='comoran'>Comoran</option>
+                <option value='congolese-(congo)'>Congolese (Congo)</option>
+                <option value='congolese-(drc)'>Congolese (DRC)</option>
+                <option value='cook-islander'>Cook Islander</option>
+                <option value='costa-rican'>Costa Rican</option>
+                <option value='croatian'>Croatian</option>
+                <option value='cuban'>Cuban</option>
+                <option value='cymraes'>Cymraes</option>
+                <option value='cymro'>Cymro</option>
+                <option value='cypriot'>Cypriot</option>
+                <option value='czech'>Czech</option>
+                <option value='danish'>Danish</option>
+                <option value='djiboutian'>Djiboutian</option>
+                <option value='dominican'>Dominican</option>
+                <option value='citizen-of-the-dominican-republic'>Citizen of the Dominican Republic</option>
+                <option value='dutch'>Dutch</option>
+                <option value='east-timorese'>East Timorese</option>
+                <option value='ecuadorean'>Ecuadorean</option>
+                <option value='egyptian'>Egyptian</option>
+                <option value='emirati'>Emirati</option>
+                <option value='english'>English</option>
+                <option value='equatorial-guinean'>Equatorial Guinean</option>
+                <option value='eritrean'>Eritrean</option>
+                <option value='estonian'>Estonian</option>
+                <option value='ethiopian'>Ethiopian</option>
+                <option value='faroese'>Faroese</option>
+                <option value='fijian'>Fijian</option>
+                <option value='filipino'>Filipino</option>
+                <option value='finnish'>Finnish</option>
+                <option value='french'>French</option>
+                <option value='gabonese'>Gabonese</option>
+                <option value='gambian'>Gambian</option>
+                <option value='georgian'>Georgian</option>
+                <option value='german'>German</option>
+                <option value='ghanaian'>Ghanaian</option>
+                <option value='gibraltarian'>Gibraltarian</option>
+                <option value='greek'>Greek</option>
+                <option value='greenlandic'>Greenlandic</option>
+                <option value='grenadian'>Grenadian</option>
+                <option value='guamanian'>Guamanian</option>
+                <option value='guatemalan'>Guatemalan</option>
+                <option value='citizen-of-guinea-bissau'>Citizen of Guinea-Bissau</option>
+                <option value='guinean'>Guinean</option>
+                <option value='guyanese'>Guyanese</option>
+                <option value='haitian'>Haitian</option>
+                <option value='honduran'>Honduran</option>
+                <option value='hong-konger'>Hong Konger</option>
+                <option value='hungarian'>Hungarian</option>
+                <option value='icelandic'>Icelandic</option>
+                <option value='indian'>Indian</option>
+                <option value='indonesian'>Indonesian</option>
+                <option value='iranian'>Iranian</option>
+                <option value='iraqi'>Iraqi</option>
+                <option value='irish'>Irish</option>
+                <option value='israeli'>Israeli</option>
+                <option value='italian'>Italian</option>
+                <option value='ivorian'>Ivorian</option>
+                <option value='jamaican'>Jamaican</option>
+                <option value='japanese'>Japanese</option>
+                <option value='jordanian'>Jordanian</option>
+                <option value='kazakh'>Kazakh</option>
+                <option value='kenyan'>Kenyan</option>
+                <option value='kittitian'>Kittitian</option>
+                <option value='citizen-of-kiribati'>Citizen of Kiribati</option>
+                <option value='kosovan'>Kosovan</option>
+                <option value='kuwaiti'>Kuwaiti</option>
+                <option value='kyrgyz'>Kyrgyz</option>
+                <option value='lao'>Lao</option>
+                <option value='latvian'>Latvian</option>
+                <option value='lebanese'>Lebanese</option>
+                <option value='liberian'>Liberian</option>
+                <option value='libyan'>Libyan</option>
+                <option value='liechtenstein-citizen'>Liechtenstein citizen</option>
+                <option value='lithuanian'>Lithuanian</option>
+                <option value='luxembourger'>Luxembourger</option>
+                <option value='macanese'>Macanese</option>
+                <option value='macedonian'>Macedonian</option>
+                <option value='malagasy'>Malagasy</option>
+                <option value='malawian'>Malawian</option>
+                <option value='malaysian'>Malaysian</option>
+                <option value='maldivian'>Maldivian</option>
+                <option value='malian'>Malian</option>
+                <option value='maltese'>Maltese</option>
+                <option value='marshallese'>Marshallese</option>
+                <option value='martiniquais'>Martiniquais</option>
+                <option value='mauritanian'>Mauritanian</option>
+                <option value='mauritian'>Mauritian</option>
+                <option value='mexican'>Mexican</option>
+                <option value='micronesian'>Micronesian</option>
+                <option value='moldovan'>Moldovan</option>
+                <option value='monegasque'>Monegasque</option>
+                <option value='mongolian'>Mongolian</option>
+                <option value='montenegrin'>Montenegrin</option>
+                <option value='montserratian'>Montserratian</option>
+                <option value='moroccan'>Moroccan</option>
+                <option value='mosotho'>Mosotho</option>
+                <option value='mozambican'>Mozambican</option>
+                <option value='namibian'>Namibian</option>
+                <option value='nauruan'>Nauruan</option>
+                <option value='nepalese'>Nepalese</option>
+                <option value='new-zealander'>New Zealander</option>
+                <option value='nicaraguan'>Nicaraguan</option>
+                <option value='nigerian'>Nigerian</option>
+                <option value='nigerien'>Nigerien</option>
+                <option value='niuean'>Niuean</option>
+                <option value='north-korean'>North Korean</option>
+                <option value='northern-irish'>Northern Irish</option>
+                <option value='norwegian'>Norwegian</option>
+                <option value='omani'>Omani</option>
+                <option value='pakistani'>Pakistani</option>
+                <option value='palauan'>Palauan</option>
+                <option value='palestinian'>Palestinian</option>
+                <option value='panamanian'>Panamanian</option>
+                <option value='papua-new-guinean'>Papua New Guinean</option>
+                <option value='paraguayan'>Paraguayan</option>
+                <option value='peruvian'>Peruvian</option>
+                <option value='pitcairn-islander'>Pitcairn Islander</option>
+                <option value='polish'>Polish</option>
+                <option value='portuguese'>Portuguese</option>
+                <option value='prydeinig'>Prydeinig</option>
+                <option value='puerto-rican'>Puerto Rican</option>
+                <option value='qatari'>Qatari</option>
+                <option value='romanian'>Romanian</option>
+                <option value='russian'>Russian</option>
+                <option value='rwandan'>Rwandan</option>
+                <option value='salvadorean'>Salvadorean</option>
+                <option value='sammarinese'>Sammarinese</option>
+                <option value='samoan'>Samoan</option>
+                <option value='sao-tomean'>Sao Tomean</option>
+                <option value='saudi-arabian'>Saudi Arabian</option>
+                <option value='scottish'>Scottish</option>
+                <option value='senegalese'>Senegalese</option>
+                <option value='serbian'>Serbian</option>
+                <option value='citizen-of-seychelles'>Citizen of Seychelles</option>
+                <option value='sierra-leonean'>Sierra Leonean</option>
+                <option value='singaporean'>Singaporean</option>
+                <option value='slovak'>Slovak</option>
+                <option value='slovenian'>Slovenian</option>
+                <option value='solomon-islander'>Solomon Islander</option>
+                <option value='somali'>Somali</option>
+                <option value='south-african'>South African</option>
+                <option value='south-korean'>South Korean</option>
+                <option value='south-sudanese'>South Sudanese</option>
+                <option value='spanish'>Spanish</option>
+                <option value='sri-lankan'>Sri Lankan</option>
+                <option value='st-helenian'>St Helenian</option>
+                <option value='st-lucian'>St Lucian</option>
+                <option value='stateless'>Stateless</option>
+                <option value='sudanese'>Sudanese</option>
+                <option value='surinamese'>Surinamese</option>
+                <option value='swazi'>Swazi</option>
+                <option value='swedish'>Swedish</option>
+                <option value='swiss'>Swiss</option>
+                <option value='syrian'>Syrian</option>
+                <option value='taiwanese'>Taiwanese</option>
+                <option value='tajik'>Tajik</option>
+                <option value='tanzanian'>Tanzanian</option>
+                <option value='thai'>Thai</option>
+                <option value='togolese'>Togolese</option>
+                <option value='tongan'>Tongan</option>
+                <option value='trinidadian'>Trinidadian</option>
+                <option value='tristanian'>Tristanian</option>
+                <option value='tunisian'>Tunisian</option>
+                <option value='turkish'>Turkish</option>
+                <option value='turkmen'>Turkmen</option>
+                <option value='turks-and-caicos-islander'>Turks and Caicos Islander</option>
+                <option value='tuvaluan'>Tuvaluan</option>
+                <option value='ugandan'>Ugandan</option>
+                <option value='ukrainian'>Ukrainian</option>
+                <option value='uruguayan'>Uruguayan</option>
+                <option value='uzbek'>Uzbek</option>
+                <option value='vatican-citizen'>Vatican citizen</option>
+                <option value='citizen-of-vanuatu'>Citizen of Vanuatu</option>
+                <option value='venezuelan'>Venezuelan</option>
+                <option value='vietnamese'>Vietnamese</option>
+                <option value='vincentian'>Vincentian</option>
+                <option value='wallisian'>Wallisian</option>
+                <option value='welsh'>Welsh</option>
+                <option value='yemeni'>Yemeni</option>
+                <option value='zambian'>Zambian</option>
+                <option value='zimbabwean'>Zimbabwean</option>
+            </select>
+            
+          </div>
+          <div class="input-box">
+            <span class="details">State</span>
+            <select name="state" id="state" class="form-control"required="">
+                <option value="">Select one...</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+                </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
